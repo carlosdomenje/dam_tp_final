@@ -38,7 +38,7 @@ services:
     image: abassi/nodejs-server:10.0-dev
     hostname: nodeapp
     container_name: nodeapp
-    restart: always  
+    restart: unless-stopped  
     volumes:
      - ./src:/home/node/app/src
     networks:
