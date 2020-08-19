@@ -6,8 +6,17 @@ export interface Dispositivos {
 }
 
 export interface Mediciones {
-    medicionId: number;
     fecha: string;
     valor: string;
     dispositivoId: number;
+}
+
+export interface LogRiego {
+    apertura: number;
+    fecha: string;
+    electrovalvulaId: number;
+}
+
+export interface EvName {
+    nombre: string;
 }

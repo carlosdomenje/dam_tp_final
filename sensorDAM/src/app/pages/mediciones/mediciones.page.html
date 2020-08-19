@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>MEDICIONES REALIZADAS</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header style="font-weight: bold">
+            LISTADO DE MEDICIONES
+        </ion-list-header>
+
+        <ion-item *ngFor="let mediciones of MedsList; let i = index">
+            <ion-avatar slot="start">
+                <img src="./assets/icon/sensors.png">
+            </ion-avatar>
+            <ion-label>
+                <h2 style="font-weight: bold">MEDICION Nº {{i}} - VALOR: {{mediciones.valor}} kPA</h2>
+                <h3>
+                    <ion-icon name="calendar" color="primary"></ion-icon>
+                    {{mediciones.fecha | fecha}}</h3>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

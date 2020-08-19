@@ -16,7 +16,7 @@ export class FechaPipe implements PipeTransform {
     this.hora = this.horaNueva[1].split('.')[0];
     console.log(this.hora);
     this.fechaNueva = this.camposFecha[2].split('T')[0] + ' / ' + this.camposFecha[1] + ' / ' + this.camposFecha[0];
-    this.fechaNueva = this.fechaNueva + ' a la Hora: ' + this.hora;
+    this.fechaNueva = 'FECHA: ' + this.fechaNueva + ' -  HORA: ' + this.hora;
     return this.fechaNueva;
   }
 

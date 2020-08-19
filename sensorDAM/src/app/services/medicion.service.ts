@@ -10,7 +10,16 @@ export class MedicionService {
 
   constructor(private http: HttpClient ) {}
 
-  getMedicionById(id: Number){
+  getMedicionById(id: number){
     return this.http.get<Mediciones>(this.urlApi + '/api/medicion/' + id);
   }
+
+  getMediciones(id: number){
+    return this.http.get<Array<Mediciones>>(this.urlApi + '/api/medicion/' + id + '/todas');
+  }
+
+  setMedicion(medicion: Mediciones){
+    return this.http.post(this.urlApi + '/api/medicion/agregar', medicion);
+  }
+
 }

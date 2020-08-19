@@ -9,7 +9,7 @@ import { Dispositivos } from '../models/dispositivosInterface';
 })
 export class DispositivosService {
   urlApi = 'http://localhost:3000';
-  // listado:Array<Dispositivo> = new Array<Dispositivo>();
+ 
 
   constructor(private http: HttpClient ) {}
 
@@ -23,9 +23,8 @@ export class DispositivosService {
   }
 
   /* Promise que obtiene un dispositivo por id de la BD */
-  // getDispositivo(id): Promise<Dispositivo>{
-  //   return this.http.get(this.urlApi + '/api/dispositivo/' + id).toPromise().then((dispositivo: Dispositivo) => {
-  //     return dispositivo;
-  //   });
-  // }
+  getDispositivo(id){
+    return this.http.get<Dispositivos>(this.urlApi + '/api/dispositivo/' + id);
+  }
+
 }

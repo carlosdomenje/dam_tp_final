@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>LOGS {{electroName | evNames}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header lines="inset">
+            LISTADO DE LOGS
+        </ion-list-header>
+
+        <ion-item *ngFor="let log of LogsList; let i = index">
+            <ion-avatar slot="start">
+                <img src="./assets/icon/logs.png">
+            </ion-avatar>
+            <ion-label>
+                <h2 style="font-weight: bold">LOG Nº {{i}} </h2>
+                <h2 style="font-weight: bold; color: #ff0022" *ngIf="log.apertura == 0">{{electroName | evNames}} CERRADA</h2>
+                <h2 style="font-weight: bold; color: #2f995b" *ngIf="log.apertura == 1" color='success'>{{electroName | evNames}} ABIERTA</h2>
+                <h3>
+                    <ion-icon name="calendar" color="primary"></ion-icon>
+                    - {{log.fecha | fecha}}</h3>
+            </ion-label>
+
+        </ion-item>
+    </ion-list>
+</ion-content>

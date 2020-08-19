@@ -8,6 +8,7 @@ import { DispositivoPageRoutingModule } from './dispositivo-routing.module';
 
 import { DispositivoPage } from './dispositivo.page';
 import { FechaPipe } from '../../pipes/fecha.pipe';
+import { EvNamesPipe } from '../../pipes/ev-names.pipe';
 
 
 
@@ -18,6 +19,6 @@ import { FechaPipe } from '../../pipes/fecha.pipe';
     IonicModule,
     DispositivoPageRoutingModule
   ],
-  declarations: [DispositivoPage, FechaPipe]
+  declarations: [DispositivoPage, FechaPipe, EvNamesPipe]
 })
 export class DispositivoPageModule {}
